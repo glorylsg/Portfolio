@@ -67,8 +67,8 @@ body {
 <button id="prevBtn" class="nav">⬅</button>
 
 <div id="viewer">
-  <div class="page"><img id="leftPage" src="pages/page1.jpg"></div>
-  <div class="page" id="rightContainer"><img id="rightPage" src="pages/page2.jpg"></div>
+  <div class="page"><img id="leftPage" src="page1.jpg"></div>
+  <div class="page" id="rightContainer"><img id="rightPage" src="page2.jpg"></div>
 </div>
 
 <button id="nextBtn" class="nav">➡</button>
@@ -84,13 +84,13 @@ const rightContainer = document.getElementById("rightContainer");
 
 function updatePages(){
 
-  leftImg.src = `pages/page${currentPage}.jpg`;
+  leftImg.src = `page${currentPage}.jpg`;
 
   if(currentPage === 1){
     rightContainer.style.visibility = "hidden";
   } else if(currentPage < totalPages){
     rightContainer.style.visibility = "visible";
-    rightImg.src = `pages/page${currentPage+1}.jpg`;
+    rightImg.src = `page${currentPage+1}.jpg`;
   } else {
     rightContainer.style.visibility = "hidden";
   }
