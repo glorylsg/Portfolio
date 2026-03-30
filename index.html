@@ -4,7 +4,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio Flipbook</title>
+<title>Glory Portfolio Flipbook</title>
 
 <style>
 body {
@@ -18,22 +18,25 @@ body {
   font-family:Arial, sans-serif;
 }
 
+/* zone contenant le livre */
 #viewer {
   display:flex;
   gap:0px;
   align-items:center;
   justify-content:center;
-  width:95vw;
-  height:90vh;
+  width:88vw;   /* réduit légèrement largeur */
+  height:92vh;  /* ajuste hauteur */
 }
 
+/* pages */
 .page {
-  width:47vw;
-  height:90vh;
-  background:white;
-  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  width:44vw;   /* réduit pour éviter chevauchement avec flèches */
+  height:92vh;
+  background:transparent; /* supprime cadre blanc */
+  box-shadow: inset -30px 0 60px rgba(0,0,0,0.35);
 }
 
+/* images pages */
 .page img{
   width:100%;
   height:100%;
@@ -41,37 +44,32 @@ body {
   display:block;
 }
 
+/* flèches navigation */
 .nav {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.35);
-    border: none;
-    font-size: 22px;
-    padding: 10px 16px;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 8px;
-    backdrop-filter: blur(6px);
-}
-  #prevBtn {
-    left: 12px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.18);
+  border: none;
+  font-size: 18px;
+  padding: 8px 14px;
+  cursor: pointer;
+  z-index: 2000;
+  border-radius: 6px;
 }
 
-#nextBtn {
-    right: 12px;
-}
-.nav:hover {
-    background: rgba(255,255,255,0.7);
-}
-
-
+/* position flèches */
 #prevBtn{
-  left:20px;
+  left:10px;
 }
 
 #nextBtn{
-  right:20px;
+  right:10px;
+}
+
+/* effet hover flèches */
+.nav:hover {
+  background: rgba(255,255,255,0.5);
 }
 
 </style>
