@@ -9,7 +9,12 @@
 <style>
 body {
   margin:0;
-  background:#111;
+  background:
+    radial-gradient(circle at center,
+    #1a1a1a 0%,
+    #111 60%,
+    #000 100%);
+    
   display:flex;
   justify-content:center;
   align-items:center;
@@ -24,16 +29,34 @@ body {
   gap:0px;
   align-items:center;
   justify-content:center;
-  width:88vw;   /* réduit légèrement largeur */
-  height:92vh;  /* ajuste hauteur */
+  width:88vw;
+  height:92vh;
+
+  /* ombre extérieure du livre */
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    0 10px 25px rgba(0,0,0,0.4);
+    
+  border-radius:6px;
 }
 
 /* pages */
 .page {
-  width:44vw;   /* réduit pour éviter chevauchement avec flèches */
+  width:44vw;
   height:92vh;
-  background:transparent; /* supprime cadre blanc */
-  box-shadow: inset -30px 0 60px rgba(0,0,0,0.35);
+  background:transparent;
+  position:relative;
+}
+
+/* ombre centrale entre pages */
+.page:first-child {
+  box-shadow: inset -35px 0 60px rgba(0,0,0,0.35);
+}
+
+.page:last-child {
+  box-shadow: inset 35px 0 60px rgba(0,0,0,0.35);
+}
+
 }
 
 /* images pages */
