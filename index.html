@@ -95,11 +95,34 @@ const rightImg = document.getElementById("rightPage");
 const rightContainer = document.getElementById("rightContainer");
 
 function updatePages(){
+if(currentPage === 1){
+
+  leftImg.src = "";
+  rightImg.src = "page1.jpg";
+  rightContainer.style.visibility = "visible";
+
+  document.querySelector(".page:first-child").style.visibility = "hidden";
+
+}
+else if(currentPage < totalPages){
+
+  document.querySelector(".page:first-child").style.visibility = "visible";
 
   leftImg.src = `page${currentPage}.jpg`;
+  rightImg.src = `page${currentPage+1}.jpg`;
 
-  if(currentPage === 1){
-    rightContainer.style.visibility = "hidden";
+  rightContainer.style.visibility = "visible";
+
+}
+else{
+
+  document.querySelector(".page:first-child").style.visibility = "visible";
+
+  leftImg.src = `page${currentPage}.jpg`;
+  rightContainer.style.visibility = "hidden";
+
+}
+
   } else if(currentPage < totalPages){
     rightContainer.style.visibility = "visible";
     rightImg.src = `page${currentPage+1}.jpg`;
